@@ -1,0 +1,123 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+}
+
+.font-sm {
+  font-size: 16px;
+}
+
+.font-md {
+  font-size: 19px;
+}
+
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 36px;
+}
+
+
+.mb-lg{
+  margin-bottom: 150px !important;
+}
+
+
+
+.pb-lg{
+  padding-bottom: 150px !important;
+}
+
+.swiper-slide{
+  box-shadow: 0 8px 40px -10px rgba(0,0,0,0.8);
+}
+
+
+#pcclen{
+  // @extend .flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+
+  #picture{
+    flex-basis: 50%;
+
+  }
+
+  #clender{
+    flex-basis: 50%;
+
+  }
+}
+
+.popular{
+
+  &__item{
+    flex-basis: 25%;
+  }
+
+  &__img{
+    height: 335px;
+  }
+}
+
+.header{
+  &__nav{
+    display: block;
+  }
+}
+
+.mobile-menu{
+  &__btn{
+    display: none;
+  }
+}
+
+.word{
+  font-size: 25px;
+}
+
+.dev-contaienr{
+  // @extend .flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  justify-content: space-between;
+
+  .dev-pic{
+    flex-basis: 46%;
+  }
+
+  .dev-text{
+    flex-basis: 46%;
+  }
+}
+
+.product{
+  // display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: space-between;
+
+  .product-pic{
+    flex-basis: 45%;
+  }
+}
+
+.main__pic {
+ 
+  & .word {
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 30px;
+  }
+}
+

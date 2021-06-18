@@ -1,0 +1,44 @@
+/******************************************************************
+
+Stylesheet: 1280px以上のモニタで適用
+
+******************************************************************/
+
+
+
+
+ 
+
+ 
+
+  #pcclen{
+    // @extend .flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  
+    #picture{
+      flex-basis: 48%;
+      background: springgreen;
+  
+    }
+  
+    #clender{
+      flex-basis: 48%;
+      background: teal;
+  
+    }
+  }
+
+  .popular{
+
+    &__item{
+      flex-basis: 23%;
+    }
+  
+  
+  }
+
+  .word{
+    font-size: 35px;
+  }
