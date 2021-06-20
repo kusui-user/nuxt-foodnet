@@ -1,5 +1,20 @@
 <template>
   <div>
-    <h1>お問い合わせ</h1>
+    <p class="ttl">お問合せ(*は必須）</p>
+    <FormContact />
   </div>
 </template>
+
+<script>
+export default {}
+</script>
+
+<style lang="scss" scoped>
+.ttl{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+</style>
+
