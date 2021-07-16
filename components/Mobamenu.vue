@@ -3,19 +3,19 @@
     <nav class="mobile-menu">
       <ul class="mobile-menu__main">
         <li class="header__li item" v-on:click="changecontent(5)" >
-          <nuxt-link to="/">{{$store.state.menues[0]}}</nuxt-link>
+          <nuxt-link to="/" active-class="acctive-list" exact>{{$store.state.menues[0]}}</nuxt-link>
         </li>
         <li class="header__li item" v-on:click="changecontent(1)">
-          <nuxt-link to="/content">{{$store.state.menues[1]}}</nuxt-link>
+          <nuxt-link to="/content" active-class="acctive-list">{{$store.state.menues[1]}}</nuxt-link>
         </li>
         <li class="header__li item" v-on:click="changecontent(2)">
-          <nuxt-link to="/company">{{$store.state.menues[2]}}</nuxt-link>
+          <nuxt-link to="/company" active-class="acctive-list">{{$store.state.menues[2]}}</nuxt-link>
         </li>
         <li class="header__li item" v-on:click="changecontent(3)">
-          <nuxt-link to="/development">{{$store.state.menues[3]}}</nuxt-link>
+          <nuxt-link to="/development" active-class="acctive-list">{{$store.state.menues[3]}}</nuxt-link>
         </li>
         <li class="header__li item" v-on:click="changecontent(4)">
-          <nuxt-link to="/contact">{{$store.state.menues[4]}}</nuxt-link>
+          <nuxt-link to="/contact" active-class="acctive-list">{{$store.state.menues[4]}}</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -47,3 +47,12 @@ export default {
   },
 };
 </script>
+
+<style  scoped>
+.acctive-list {
+  color:black;
+}
+
+
+
+</style>
