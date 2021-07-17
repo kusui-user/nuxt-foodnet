@@ -16,7 +16,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon3.ico' },
       // { rel:"stylesheet" , href:"~/assets/style/bootstrap-reboot.css"},
-      {rel : "stylesheet" , href : "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"},
+      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
     ]
   },
@@ -44,10 +44,10 @@ export default {
         families: {
 
           'Noto+Serif+JP': true,
-          Roboto:true,
-          'Reggae+One':true,
-         
-          
+          Roboto: true,
+          'Reggae+One': true,
+
+
 
           // Varela: true,
           // 'Varela+Round': true
@@ -56,13 +56,34 @@ export default {
     ],
 
 
-    
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     "@nuxtjs/axios",
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyD-ten8l0sTBm1OKHcMj4wdQsZwODEYS1s",
+          authDomain: "nuxt-foodnet.firebaseapp.com",
+          projectId: "nuxt-foodnet",
+          storageBucket: "nuxt-foodnet.appspot.com",
+          messagingSenderId: "578289622093",
+          appId: "1:578289622093:web:6c342a6fd8ca98a6345004",
+          measurementId: "G-E6SYMP88DW"
+        },
+        services: {
+          auth: true ,// Just as example. Can be any other service.,
+          firestore:true,
+          storage:true,
+          database:true,
+        }
+      }
+    ]
   ],
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

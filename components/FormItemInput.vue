@@ -19,9 +19,9 @@ export default {}
 
   > .input {
     width: 100%;
-    margin: 0;
+    margin: 20px;
     padding: 16px;
-    line-height: 1.4em;
+    line-height: 5em;
     border-style: solid;
     border-color: gray;
     border-width: 1px;

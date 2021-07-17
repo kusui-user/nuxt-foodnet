@@ -120,7 +120,7 @@ export default {
   position: relative;
 
   > .form-item {
-    margin-top: 16px;
+    margin-top: 20px;
   }
 
   > .btn {
