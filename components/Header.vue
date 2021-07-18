@@ -29,6 +29,9 @@
             <li class="header__li item" v-on:click="changecontent(4)">
               <nuxt-link to="/contact" active-class="acctive-list">{{ $store.state.menues[4] }}</nuxt-link>
             </li>
+            <li class="header__li item" >
+              <nuxt-link to="/contact" active-class="acctive-list">ログイン</nuxt-link>
+            </li>
           </ul>
         </nav>
 
