@@ -1,13 +1,13 @@
 <template>
   <form class="form form-login">
-    <FormItemInput v-model="email" type="text" placeholder="メールアドレス" />
-    <FormItemInput
+    <FormLogininput v-model="email" type="text" placeholder="メールアドレス" />
+    <FormLogininput
       v-model="password"
       type="password"
       placeholder="パスワード"
     />
     <div class="buttn">
-      <nuxt-link to='register'>アカウントを作成</nuxt-link>
+      <nuxt-link to="register">アカウントを作成</nuxt-link>
       <FormLoginButton type="submit" label="次へ" @click="login" />
     </div>
   </form>
@@ -20,6 +20,14 @@ export default {
       email: "",
       password: "",
     };
+  },
+  methods: {
+    login(email, passwork) {
+      this.$store.login.dispatch("login", {
+        email: this.email,
+        password: this.password,
+      });
+    },
   },
 };
 </script>
