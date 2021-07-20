@@ -2,6 +2,7 @@
   <div class="form-item form-item-input">
     <input
       v-bind="$attrs"
+      :class="{ small: itemStatus === 'small' }"
       :placeholder="placeholder"
       class="input"
       @input="$emit('input', $event.target.value)"
@@ -16,9 +17,9 @@ export default {
       type: String,
       default: "",
     },
-    itemStatus:{
+    itemStatus: {
       type: String,
-      required:false,
+      required: false,
     },
     placeholder: {
       type: String,
@@ -27,3 +28,19 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.form-item-input {
+  > .input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 150%;
+
+    &.small {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+  }
+}
+</style>

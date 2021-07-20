@@ -1,7 +1,7 @@
 <template>
-  <form class="form form-login">
-    <FormLogininput v-model="email" type="text" placeholder="メールアドレス" />
-    <FormLogininput
+  <form class="form form-login" @submit.prevent>
+    <FormLoginInput v-model="email" type="text" placeholder="メールアドレス" />
+    <FormLoginInput
       v-model="password"
       type="password"
       placeholder="パスワード"
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     login(email, passwork) {
-      this.$store.login.dispatch("login", {
+      this.$store.dispatch("login/login", {
         email: this.email,
         password: this.password,
       });
@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 .form-login {
+  height: 300px;
   > .form-item-input:nth-child(2) {
     margin-top: 8px;
   }
