@@ -26,6 +26,21 @@ export const actions = {
         console.log(error) //eslint-disable-line
       })
   },
+  register({ context }, payload) {
+    this.$fire.auth
+      .createUserWithEmailAndPassword(payload.email, payload.password)
+  },
+  async loginGoogle({ context }) {
+    try {
+      const provider = new this.$fireModule.auth.GoogleAuthProvider()
+      await this.$fire.auth.signInWithPopup(provider).then(() => {
+        // dispatch('checkLogin')
+        this.$router.push('/')
+      })
+    } catch (error) {
+      console.log(error) //eslint-disable-line
+    }
+  },
 }
 
 export const mutations = {}

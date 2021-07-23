@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="button">
-      <nuxt-link to="/login" class="link">代わりにログイン</nuxt-link>
+      <nuxt-link to="/Formlogin" class="link">代わりにログイン</nuxt-link>
       <FormItemButton type="submit" label="次へ" @click="register" />
     </div>
   </form>
@@ -70,7 +70,7 @@ export default {
     },
     register() {
       if (this.password === this.passwordCheck) {
-        this.$store.dispatch('register', {
+        this.$store.dispatch('login/register', {
           name: this.name,
           email: this.email,
           password: this.password,
@@ -79,7 +79,7 @@ export default {
       }
     },
     loginGoogle() {
-      this.$store.dispatch('loginGoogle')
+      this.$store.dispatch('login/loginGoogle')
     },
     loginTwitter() {
       this.$store.dispatch('loginTwitter')

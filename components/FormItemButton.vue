@@ -21,8 +21,8 @@ export default {}
   letter-spacing: 0.12em;
   justify-content: center;
   text-align: center;
-  color: white;
-  background-color:black;
+  color: wheat;
+  background-color:whitesmoke;
   border: none;
   transition: all 0.024s linear;
 
