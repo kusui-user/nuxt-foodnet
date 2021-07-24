@@ -32,10 +32,11 @@ export default {
 <style lang="scss" scoped>
 .form-item-input {
   > .input {
-    width: 100%;
+    width: 60%;
     padding: 12px 16px;
     font-size: 16px;
     line-height: 150%;
+    margin: 10px;
 
     &.small {
       padding: 10px 16px;

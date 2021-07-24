@@ -38,7 +38,7 @@
     </div>
     <div class="button">
       <nuxt-link to="/Formlogin" class="link">代わりにログイン</nuxt-link>
-      <FormItemButton type="submit" label="次へ" @click="register" />
+      <FormItemButton type="submit"  @click="register" >次へ</FormItemButton>
     </div>
   </form>
 </template>
@@ -126,7 +126,7 @@ export default {
     }
 
     > .form {
-      width: calc(100% - 280px);
+      width: calc(100% - 180px);
 
       > .form-item-input:nth-child(2) {
         margin-top: 8px;
@@ -139,13 +139,13 @@ export default {
           justify-content: space-between;
 
           > .form-item-input {
-            width: calc(50% - 40px);
+            width: calc(80% - 30px);
           }
         }
 
         > .placeholder {
           font-size: 12px;
-          line-height: 18px;
+          line-height: 10px;
           color: rgba(0, 0, 0, 0.4);
         }
       }

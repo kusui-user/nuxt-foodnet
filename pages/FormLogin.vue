@@ -39,11 +39,11 @@ export default {
     margin-top: 8px;
   }
 
-  > .button {
-    margin-top: 32px;
+  > .buttn {
+    margin-top: 50px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content:space-around;
+    // align-items: center;
 
     > .link {
       color: blue;

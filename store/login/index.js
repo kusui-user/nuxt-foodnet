@@ -14,21 +14,57 @@ export const getters = {
 }
 
 export const actions = {
-  login({ context }, payload) {
-    this.$fire.auth
-      .signInWithEmailAndPassword(payload.email, payload.password)
-      .then((user) => {
-        console.log(user) //eslint-disable-line
-        this.$router.push('/')
-      })
-      .catch((error) => {
-        console.log('エラーです') //eslint-disable-line
-        console.log(error) //eslint-disable-line
-      })
+  async login({ dispatch }, payload) {
+    try {
+      await this.$fire.auth.signInWithEmailAndPassword(
+        payload.email,
+        payload.password
+      )
+      dispatch('checkLogin')
+      this.$router.push('/')
+    } catch (error) {
+      console.log(error) //eslint-disable-line
+    }
   },
-  register({ context }, payload) {
-    this.$fire.auth
-      .createUserWithEmailAndPassword(payload.email, payload.password)
+  async checkLogin({ commit }) {
+    try {
+      const user = this.$fire.auth.currentUser
+      await commit('getData', {
+        uid: user.uid,
+        name: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+      })
+    } catch (error) {
+      console.log(error) //eslint-disable-line
+    }
+  },
+  async register({ dispatch, state }, payload) {
+    try {
+      await this.$fire.auth.createUserWithEmailAndPassword(
+        payload.email,
+        payload.password
+      )
+      dispatch('checkLogin')
+      const storageRef = this.$fire.storage.ref()
+      storageRef
+        .child(`users/${state.user.uid}.jpg`)
+        .put(payload.thumbnail)
+        .then(() => {
+          storageRef
+            .child(`users/${state.user.uid}.jpg`)
+            .getDownloadURL()
+            .then((url) => {
+              this.$fire.auth.currentUser.updateProfile({
+                displayName: payload.name,
+                photoURL: url,
+              })
+              this.$router.push('/register/finish')
+            })
+        })
+    } catch (error) {
+      console.log(error) //eslint-disable-line
+    }
   },
   async loginGoogle({ context }) {
     try {
@@ -43,4 +79,8 @@ export const actions = {
   },
 }
 
-export const mutations = {}
+export const mutations = {
+  getData(state, user) {
+    state.user = user
+  },
+}

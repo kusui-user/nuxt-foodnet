@@ -21,7 +21,7 @@ export default {}
     width: 100%;
     margin: 20px;
     padding: 16px;
-    line-height: 5em;
+    line-height: 1.5em;
     border-style: solid;
     border-color: gray;
     border-width: 1px;
